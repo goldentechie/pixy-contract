@@ -1,0 +1,69 @@
+code is stored at code id: 43514
+instantiating contract with code id: 43514... done
+- events:
+    - type: from_contract
+      attributes:
+        - key: contract_address
+          value: terra1ngdv4casw309442fycy5p8fuq7glcul8qpssh9
+        - key: method
+          value: instantiate
+        - key: owner
+          value: terra1qd9fwwgnwmwlu2csv49fgtum3rgms64s8tcavp
+        - key: count
+          value: "0"
+    - type: instantiate_contract
+      attributes:
+        - key: creator
+          value: terra1qd9fwwgnwmwlu2csv49fgtum3rgms64s8tcavp
+        - key: admin
+        - key: code_id
+          value: "43514"
+        - key: contract_address
+          value: terra1ngdv4casw309442fycy5p8fuq7glcul8qpssh9
+    - type: message
+      attributes:
+        - key: action
+          value: /terra.wasm.v1beta1.MsgInstantiateContract
+        - key: module
+          value: wasm
+        - key: sender
+          value: terra1qd9fwwgnwmwlu2csv49fgtum3rgms64s8tcavp
+    - type: wasm
+      attributes:
+        - key: contract_address
+          value: terra1ngdv4casw309442fycy5p8fuq7glcul8qpssh9
+        - key: method
+          value: instantiate
+        - key: owner
+          value: terra1qd9fwwgnwmwlu2csv49fgtum3rgms64s8tcavp
+        - key: count
+          value: "0"
+
+root@hannibal-dev-13:/home/hannibal/Work/pixy/pixy-contract# terrain console --network testnet
+terrain > await lib.increment(wallets.bombay);
+{
+  txhash: '1892035C86C82062A9B46CEFE86C1D8C5EAA600D4147EC64743781B646182E7D',
+  raw_log: '[{"events":[{"type":"execute_contract","attributes":[{"key":"sender","value":"terra1qd9fwwgnwmwlu2csv49fgtum3rgms64s8tcavp"},{"key":"contract_address","value":"terra1ngdv4casw309442fycy5p8fuq7glcul8qpssh9"}]},{"type":"from_contract","attributes":[{"key":"contract_address","value":"terra1ngdv4casw309442fycy5p8fuq7glcul8qpssh9"},{"key":"method","value":"try_increment"}]},{"type":"message","attributes":[{"key":"action","value":"/terra.wasm.v1beta1.MsgExecuteContract"},{"key":"module","value":"wasm"},{"key":"sender","value":"terra1qd9fwwgnwmwlu2csv49fgtum3rgms64s8tcavp"}]},{"type":"wasm","attributes":[{"key":"contract_address","value":"terra1ngdv4casw309442fycy5p8fuq7glcul8qpssh9"},{"key":"method","value":"try_increment"}]}]}]',
+  gas_wanted: 160688,
+  gas_used: 102150,
+  height: 7854007,
+  logs: [
+    TxLog {
+      msg_index: 0,
+      log: '',
+      events: [Array],
+      eventsByType: [Object]
+    }
+  ],
+  code: 0,
+  codespace: '',
+  data: '0A280A262F74657272612E7761736D2E763162657461312E4D736745786563757465436F6E7472616374',
+  info: '',
+  timestamp: ''
+}
+terrain > await lib.getCount()
+{ count: 1 }
+terrain > 
+(To exit, press Ctrl+C again or Ctrl+D or type .exit)
+terrain > 
+
